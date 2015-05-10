@@ -21,7 +21,7 @@ class Employee:
         self.__title = newTitle
 
     def updateHours(self,newHours):
-        self.__hours=newHours
+        self.__hours += newHours
         
     def displayWorkerRecord(self):
         amountOwed= self.amountOwed()
