@@ -1,6 +1,6 @@
 NEG_AMNT_ERR = -1
 
-class Employee:
+class Employee(object):
 
     def __init__(self,SSN,name,hours=0):
         self.__SSN =SSN
@@ -36,11 +36,12 @@ class Employee:
         
     
     
-class Company:
+class Company(object):
 
-    def __init__(self,name,workerRec):
-        self.name = name
-        self.workerRec = workerRec
+    def __init__(self,name):
+        self.__name = name
+        self.__workerRec = {}
+        
     def hireWorker(self,worker):
         for i in workerRec:
             if i.SSN = worker.SSN:
