@@ -1,0 +1,109 @@
+
+from __future__ import print_function
+from workerRecModule import workerRec
+
+DUPLICATE_SSN_ERR =
+    
+class Company(object):
+ 
+   
+
+    def __init__(self,name):
+        
+        self.__compName = name
+        self.__workerRec = {}
+
+    def getNameOfCompany(self):
+        return self.__compName
+
+    def __searchInWorkerRecord(self,SSN):
+        return SSN in self.__workerRec
+        
+        
+    def hireWorker(self,SSN, workerName):
+        if self.__searchInWorkerRecord(SSN):
+            return DUPLICATE_SSN_ERR
+        else:
+            self.__workerRec[SSN]= 
+    
+        
+    def addHours(self,worker,hours):
+        newHours = worker.hours+hours
+        worker.updateHours(newHours)
+
+    def changeTitle(self,newTitle,worker):
+        worker.updateTitle(newTitle)
+
+    def payWorkers(self):
+        name = self.name.replace(" ","") +".PAY"
+        fh = open(name,'w')
+        self.sortWorkerRec()
+
+        for i in range(len(self.workerrec[i])):
+            amount= self.workerrec[i].amountOwed()
+            if len(self.workerrec[i].displayWorkerRecord())==3:
+                fh.write("%i\n %s \t %.2f\t\n"%(self.workerrec[i].SSN,self.workerrec[i].name,amount))
+                
+            else:
+                fh.write("%i\n %s \t %.2f\t[%s]\n"%(self.workerrec[i].SSN,self.workerrec[i].name,amount,self.workerrec[i].title))
+            self.workerrec[i].updateHours(0)
+        
+
+    def sortWorkerRec(self):
+        SSNlist=[]
+        for i in self.workerrec:
+            SSNlist.append(i.SSN)
+        SSNlist=sorted(SSNlist)
+    
+        for i in range(len( SSNlist)):
+            for j in range(len(self.workerrec)):
+                if self.wokerrec[j].SSN=SSNlist[i]:
+                    self.workerrec[i]=self.workerrec.pop(j)
+                    
+    def fireWorkers(self,worker):
+        name = worker.name.replace(" ","") +".FINAL.PAY"
+        amount= worker.amountOwed()
+        fh = open(name,'w')
+        if len(worker.displayWorkerRecord())==3:
+            fh.write("%i\n %s \t %.2f\t\n"%(worker.SSN,worker.name,amount))
+        else:
+            fh.write("%i\n %s \t %.2f\t[%s]\n"%(worker.SSN,worker.name,amount,worker.title))
+                
+        
+        
+        self.workerrec.remove(worker)        
+            
+        
+
+def main():
+    
+    company = Company("RockPit SnakePit and Co.", [])
+    emp1 = Employee(443882354,0,"Sally Jones")
+    company.hireWorker(emp1)
+    emp1.updatePayRate(35.22)
+    emp2 = Employee(283728992,0,"Joe Smith")
+    company.hireWorker(emp2)
+    emp2.updatePayRate(25.34)
+    company.addHours(emp1,11)
+    company.addHours(emp2,9)
+    company.addHours(emp1,3)
+    company.payWorkers()
+    
+    
+    
+    
+    emp1 = Employee(1,10)
+    emp2 = Employee(2,-10)
+    emp3 = Employee(3,10)
+    emp3.updateTitle("Secretary")
+    print emp3.title
+    
+    emp3.updatePayRate(20.00)
+    print emp3.payRate
+
+    emp3.updateHours(20)
+    print emp3.hours
+
+    emp3.displayWorkerRecord()
+    
+
