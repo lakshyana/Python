@@ -42,12 +42,11 @@ class Company(object):
         self.__name = name
         self.__workerRec = {}
         
-    def hireWorker(self,worker):
-        for i in workerRec:
-            if i.SSN = worker.SSN:
-                print("Error")
+    def hireWorker(self,SSN, name):
+            if SSN in self.__workerRec:
+                return DUP_ACCNT_ERR
             else:
-                self.workerRec.append(worker)
+                self.__workerRec[SSN]= WorkerRec(SSN, name)
     
         
     def addHours(self,worker,hours):
