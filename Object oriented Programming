@@ -23,15 +23,6 @@ class Employee:
     def updateHours(self,newHours):
         self.__hours += newHours
         
-    def displayWorkerRecord(self):
-        amountOwed= self.amountOwed()
-        if self.title == '':
-            
-            return self.SSN,self.name,self.amount
-        else:
-            return self.SSN,self.name,self.amount,self.title
-    def amountOwed(self):
-        return self.hours*self.payRate
     
     
 class Company:
