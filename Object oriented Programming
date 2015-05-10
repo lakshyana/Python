@@ -5,11 +5,22 @@ class Employee:
     def __init__(self,SSN,name,hours=0):
         self.__SSN =SSN
         self.__payRate= 17.22
-        self.__title = ""
+        self.__title = ""  #This can be an empty string or you can also have it equal None, either method is acceptable
         self.__hours = hours
         self.__name = name
         
-
+    def getName(self):
+        return self.__name
+        
+    def getPayRate(self):
+        return self.__payRate
+        
+    def getHoursWorked(self):
+        return self.__hours
+        
+    def getTitle(self):
+        return self.__title
+        
     def updatePayRate(self,newPayRate):
         
         if newPayRate<0:
