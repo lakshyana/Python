@@ -1,11 +1,11 @@
 class Employee:
 
-    def __init__(self,SSN, hours,name):
-        self.SSN =SSN
-        self.payRate= 17.22
-        self.title = ""
-        self.hours = hours
-        self.name = name
+    def __init__(self,SSN,name,hours=0):
+        self.__SSN =SSN
+        self.__payRate= 17.22
+        self.__title = ""
+        self.__hours = hours
+        self.__name = name
         
 
     def updatePayRate(self,newPayRate):
@@ -13,13 +13,13 @@ class Employee:
         if newPayRate<0:
             print ("ERROR")
         else:
-            self.payRate= newPayRate
+            self.__payRate= newPayRate
 
     def updateTitle(self,newTitle):
-        self.title = newTitle
+        self.__title = newTitle
 
     def updateHours(self,newHours):
-        self.hours=newHours
+        self.__hours=newHours
         
     def displayWorkerRecord(self):
         amountOwed= self.amountOwed()
