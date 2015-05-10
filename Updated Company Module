@@ -2,7 +2,7 @@
 from __future__ import print_function
 from workerRecModule import workerRec
 
-DUPLICATE_SSN_ERR =
+DUPLICATE_SSN_ERR = -2
     
 class Company(object):
  
@@ -15,13 +15,9 @@ class Company(object):
 
     def getNameOfCompany(self):
         return self.__compName
-
-    def __searchInWorkerRecord(self,SSN):
-        return SSN in self.__workerRec
-        
         
     def hireWorker(self,SSN, workerName):
-        if self.__searchInWorkerRecord(SSN):
+        if SSN in self.__workerRec[SSN]:
             return DUPLICATE_SSN_ERR
         else:
             self.__workerRec[SSN]= 
