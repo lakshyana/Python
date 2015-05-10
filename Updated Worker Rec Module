@@ -1,0 +1,61 @@
+
+from __future__ import print_function
+
+
+NEG_AMT_ERR = -1
+
+
+class WorkerRec(object):
+
+    def __init__(self,SSN,name,numHours=0, title=None):
+        self.__name = name
+        self.__SSN = SSN
+        self.__payRate= 17.22
+        self.__numHours = hours
+        self.__title = title
+
+    def getNameOfWorker(self):
+        return self.__name
+    
+    def getPayRate(self):
+        return self.__payRate
+    
+    def getHoursWorked(self):
+        if self.__numHours<0:
+            return NEG_AMT_ERR
+        else:
+            return self.__numHours
+        
+    def getTitle(self):
+        return self.__title
+
+    def updatePayRate(self,newPayRate):
+        
+        if newPayRate<0:
+            return NEG_AMT_ERR
+        else:
+            self.__payRate= newPayRate
+            
+    def resetNumHours(self):
+        self.__numHours = 0
+
+    def addHours(self, newHours):
+        self.__numHours += newHours
+
+    def updateTitle(self,newTitle):
+        self.__title = newTitle
+  
+
+    def updateHours(self,newHours):
+        self.numHours = newHours
+        
+    def getAmountOwed(self):
+        return self.__numHours*self.__payRate
+        
+    def getWorkerRecord(self):
+        amountOwed= self.getAmountOwed()
+        if self.__title == None:
+            
+            return self.___SSN,self.__name,amountOwed
+        else:
+            return self.__SSN,self.__name,amountOwed,self.__title
