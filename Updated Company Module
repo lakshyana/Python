@@ -1,6 +1,6 @@
 
 from __future__ import print_function
-from workerRecModule import workerRec
+from workerRecModule import WorkerRec
 
 DUPLICATE_SSN_ERR = -2
     
@@ -20,7 +20,7 @@ class Company(object):
         if SSN in self.__workerRec[SSN]:
             return DUPLICATE_SSN_ERR
         else:
-            self.__workerRec[SSN]= 
+            self.__workerRec[SSN]= WorkerRec(SSN, workerName)
     
         
     def addHours(self,worker,hours):
