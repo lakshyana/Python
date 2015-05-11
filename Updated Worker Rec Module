@@ -46,9 +46,6 @@ class WorkerRec(object):
         self.__title = newTitle
   
 
-    def updateHours(self,newHours):
-        self.numHours = newHours
-        
     def getAmountOwed(self):
         return self.__numHours*self.__payRate
         
@@ -56,6 +53,6 @@ class WorkerRec(object):
         amountOwed= self.getAmountOwed()
         if self.__title == None:
             
-            return self.___SSN,self.__name,amountOwed
+            return self.__SSN,self.__name,amountOwed
         else:
             return self.__SSN,self.__name,amountOwed,self.__title
