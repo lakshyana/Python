@@ -11,7 +11,7 @@ class WorkerRec(object):
         self.__name = name
         self.__SSN = SSN
         self.__payRate= 17.22
-        self.__numHours = hours
+        self.__numHours = numHours
         self.__title = title
 
     def getNameOfWorker(self):
